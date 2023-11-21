@@ -14,6 +14,11 @@ class _ListCarsState extends State<ListCars> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    if (MediaQuery.of(context).orientation == Orientation.landscape) {
+      width = width * 1.2;
+    }
+
     return Scaffold(
         appBar: AppBar(
           title: Text(_text),
@@ -23,7 +28,7 @@ class _ListCarsState extends State<ListCars> {
             itemCount: cars.length,
             itemBuilder: (context, index) {
               return Row(children: [
-                const SizedBox(width: 150),
+                SizedBox(width: width * 0.3),
                 IconButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(

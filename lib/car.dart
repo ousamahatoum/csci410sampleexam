@@ -6,6 +6,7 @@ class Car {
 
   Car(this.model, this.year, this.rentperDay, this.image);
 
+  @override
   String toString() {
     return '$model-$year';
   }
